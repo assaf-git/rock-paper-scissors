@@ -6,14 +6,30 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        const rock = "Rock";
-        const paper = "Paper";
-        const scissors = "Scissors";
-        console.log(scissors);
-        let randomNumber = Math.floor(Math.random()*3)+1;
-        //console.log(randomNumber);
-
-    </script>
+   
 </body>
+
+<script>
+    const rock = "Rock";
+    const paper = "Paper";
+    const scissors = "Scissors";
+    let randomNumber = Math.floor(Math.random()*3)+1;
+    //console.log(randomNumber);
+    let computerChoice;
+   // function getComputerChoice () {
+        if(randomNumber === 1) {
+            computerChoice = rock;
+            console.log(computerChoice);
+        }
+        else if(randomNumber === 2) {
+            computerChoice = paper;
+            console.log(computerChoice);
+        }
+        else {
+            computerChoice = scissors;
+            console.log(computerChoice);
+        }
+   // }
+    
+</script>
 </html>

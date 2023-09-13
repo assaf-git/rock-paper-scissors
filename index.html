@@ -16,22 +16,24 @@
     let randomNumber = Math.floor(Math.random()*3)+1;
     //console.log(randomNumber);
     let computerChoice;
-    
+
     function getComputerChoice () {
+        //let computerChoice;
+
         if(randomNumber === 1) {
-            computerChoice = rock;
+            return computerChoice = rock;
             //console.log(computerChoice);
         }
         else if(randomNumber === 2) {
-            computerChoice = paper;
+           return computerChoice = paper;
             //console.log(computerChoice);
         }
         else {
-            computerChoice = scissors;
+           return computerChoice = scissors;
             //console.log(computerChoice);
-        }
+        } 
    }
-   console.log(computerChoice);
+   console.log(getComputerChoice(computerChoice));
 
 </script>
 </html>

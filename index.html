@@ -78,10 +78,10 @@
         // if playerSelection gets scissors and computerChoice gets rock
         // lose = "You lose! Rock beats Scissors."
         // Return lose
-        // else if (playerSelection === "Scissors" && computerChoice === "Rock") {
-        //     loseGame = "You lose! Rock beats Scissors.";
-        //     return loseGame;
-        // }
+        else if (playerSelection === "Scissors" && computerChoice === "Rock") {
+            loseGame = "You lose! Rock beats Scissors.";
+            return loseGame;
+        }
     }
     console.log(playRound(drawGame));
     console.log(playRound(loseGame));

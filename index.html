@@ -119,7 +119,13 @@
             winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
             return winGame;
         }
-
+        // or if playerSelection gets paper and computerChoice gets rock
+        // win = "Winner, winner, chicken dinner! Paper beats Rock."
+        // Return win
+        else if (playerSelection === "Paper" && computerChoice === "Rock") {
+            winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
+            return winGame;
+        }
     }
     console.log(playRound(drawGame));
     console.log(playRound(loseGame));

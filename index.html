@@ -45,8 +45,7 @@
         let char2 = char1.toUpperCase();
         let lowerCaseText1 = userInput.slice(1);
         let lowerCaseText2 = lowerCaseText1.toLowerCase();
-        return char2+lowerCaseText2;
-        
+        return char2+lowerCaseText2;     
     }
     console.log(caseCorrect(userInput));
 
@@ -56,7 +55,13 @@
     let winGame;
     let loseGame;
     let drawGame;
-    
 
+    function playRound(playerSelection,computerSelection) {
+        if (playerSelection === computerSelection) {
+            drawGame = "It's a tie.";
+            return drawGame;
+        }
+    }
+    console.log(playRound(drawGame))
 </script>
 </html>

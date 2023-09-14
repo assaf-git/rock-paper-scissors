@@ -98,24 +98,32 @@
             loseGame = "You lose! Paper beats Rock.";
             return loseGame;
         }
-        // // or if playerSelection gets paper and computerChoice gets scissors
-        // // lose = "You lose! Scissors beats Paper."
-        // // Return lose
+        //  or if playerSelection gets paper and computerChoice gets scissors
+        //  lose = "You lose! Scissors beats Paper."
+        //  Return lose
         else if (playerSelection === "Paper" && computerChoice === "Scissors") {
             loseGame = "You lose! Scissors beats Paper.";
             return loseGame;
         }
-        // if playerSelection gets scissors and computerChoice gets rock
+        // or if playerSelection gets scissors and computerChoice gets rock
         // lose = "You lose! Rock beats Scissors."
         // Return lose
         else if (playerSelection === "Scissors" && computerChoice === "Rock") {
             loseGame = "You lose! Rock beats Scissors.";
             return loseGame;
         }
+        // if playerSelection gets rock and computerChoice gets scissors
+        // win = "Winner, winner, chicken dinner! Rock beats Scissors."
+        // Return win
+        else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+            winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
+            return winGame;
+        }
 
     }
     console.log(playRound(drawGame));
     console.log(playRound(loseGame));
+    console.log(playRound(winGame));
 
 
 </script>

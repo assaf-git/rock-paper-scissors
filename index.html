@@ -56,12 +56,30 @@
     let loseGame;
     let drawGame;
 
-    function playRound(playerSelection,computerSelection) {
-        if (playerSelection === computerSelection) {
-            drawGame = "It's a tie.";
-            return drawGame;
+    function playRound() {
+        if (playerSelection == computerSelection) {
+             drawGame = "It's a tie.";
+             return drawGame;
         }
+        // else if playerSelection gets rock and computerChoice gets paper
+        // lose = "You lose! Paper beats Rock."
+        // Return lose
+        // else if (playerSelection === "Rock" && computerSelection === "Paper") {
+        //     loseGame = "You lose! Paper beats Rock.";
+        //     return loseGame;
+        // }
+        // // or if playerSelection gets paper and computerChoice gets scissors
+        // // lose = "You lose! Scissors beats Paper."
+        // // Return lose
+        // else if (playerSelection === "Paper" && computerChoice === "Scissors") {
+        //     loseGame = "You lose! Scissors beats Paper.";
+        //     return loseGame;
+        // }
+
     }
-    console.log(playRound(drawGame))
+    console.log(playRound(drawGame));
+    console.log(playRound(loseGame));
+
+
 </script>
 </html>

@@ -10,23 +10,41 @@
 </body>
 
 <script>
+    // Declare 3 separate constants to their designated strings:
+    // rock = "Rock"
+    // paper = "Paper"
+    // scissors = "Scissors"
     const rock = "Rock";
     const paper = "Paper";
     const scissors = "Scissors";
+    // Declare a random number variable - randomNumber
+    // Randomly select 1 of 3 variables 
+    // Use random function to get 0-1 integer
+    // Multiply by 3 and add 1 (if function rounds down i.e.Math.floor)
+    // Use console to return the choice
     let randomNumber = Math.floor(Math.random()*3)+1;
     //console.log(randomNumber);
+
+    // Declare variable computerChoice
     let computerChoice;
 
+    // Create getComputerChoice function
+    // Assign randomNumber to it's designated constant and return its value:
     function getComputerChoice () {
-        //let computerChoice = 0;
+        // if randomNumber equals 1
+        // assign rock to computerChoice
         if(randomNumber === 1) {
             return computerChoice = rock;
             //console.log(computerChoice);
         }
+        // if randomNumber equals 2
+        // assign paper to computerChoice
         else if(randomNumber === 2) {
            return computerChoice = paper;
             //console.log(computerChoice);
         }
+        // if randomNumber equals 3
+        // assign scissors to computerChoice
         else {
            return computerChoice = scissors;
             //console.log(computerChoice);
@@ -35,11 +53,15 @@
 
     console.log(getComputerChoice(computerChoice));
    
+    // Declare const computerSelection = computerChoice
     const computerSelection = computerChoice;
     console.log(computerSelection);
 
+    // Prompt user to input "Rock Paper Scissor: " - variable userInput
     let userInput = prompt("Rock Paper Scissors: ");
    
+    // Create function caseFluid to convert user input to be case insensitive
+    // Return the new value - first character uppercase, the rest lowercase
     function caseCorrect(userInput) {
         let char1 = userInput.charAt(0);
         let char2 = char1.toUpperCase();
@@ -49,14 +71,22 @@
     }
     console.log(caseCorrect(userInput));
 
+    // Declare constant playerSelection = userInput
     const playerSelection = caseCorrect(userInput);
     console.log(playerSelection);
 
+    // Declare variable win
     let winGame;
+    // Declare variable lose
     let loseGame;
+    // Declare variable draw
     let drawGame;
 
+    // Create function playRound to compare playerSelection with computerChoice
     function playRound() {
+        // if playerSelection equals computerChoice
+        // draw = "It's a tie."
+        // Return draw
         if (playerSelection == computerSelection) {
              drawGame = "It's a tie.";
              return drawGame;
@@ -82,6 +112,7 @@
             loseGame = "You lose! Rock beats Scissors.";
             return loseGame;
         }
+
     }
     console.log(playRound(drawGame));
     console.log(playRound(loseGame));

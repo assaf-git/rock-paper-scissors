@@ -17,13 +17,7 @@
     const rock = "Rock";
     const paper = "Paper";
     const scissors = "Scissors";
-    // Declare a random number variable - randomNumber
-    // Randomly select 1 of 3 variables 
-    // Use random function to get 0-1 integer
-    // Multiply by 3 and add 1 (if function rounds down i.e.Math.floor)
-    // Use console to return the choice
-    let randomNumber = Math.floor(Math.random()*3)+1;
-    //console.log(randomNumber);
+   
 
     // Declare variable computerChoice
     let computerChoice;
@@ -34,116 +28,135 @@
     let winCount;
     let loseCount;
 
-    // Create getComputerChoice function
-    // Assign randomNumber to it's designated constant and return its value:
-    function getComputerChoice () {
-        // if randomNumber equals 1
-        // assign rock to computerChoice
-        if(randomNumber === 1) {
-            return computerChoice = rock;
-            //console.log(computerChoice);
-        }
-        // if randomNumber equals 2
-        // assign paper to computerChoice
-        else if(randomNumber === 2) {
-           return computerChoice = paper;
-            //console.log(computerChoice);
-        }
-        // if randomNumber equals 3
-        // assign scissors to computerChoice
-        else {
-           return computerChoice = scissors;
-            //console.log(computerChoice);
-        } 
-    }
-
-    console.log(getComputerChoice(computerChoice));
+    
+    // Declare userInput variable
+    let userInput;
    
-    // Declare const computerSelection = computerChoice
-    const computerSelection = computerChoice;
-    console.log(computerSelection);
-
-    // Prompt user to input "Rock Paper Scissor: " - variable userInput
-    let userInput = prompt("Rock Paper Scissors: ");
-   
-    // Create function caseFluid to convert user input to be case insensitive
-    // Return the new value - first character uppercase, the rest lowercase
-    function caseCorrect(userInput) {
-        let char1 = userInput.charAt(0);
-        let char2 = char1.toUpperCase();
-        let lowerCaseText1 = userInput.slice(1);
-        let lowerCaseText2 = lowerCaseText1.toLowerCase();
-        return char2+lowerCaseText2;     
-    }
-    console.log(caseCorrect(userInput));
-
-    // Declare constant playerSelection = userInput
-    const playerSelection = caseCorrect(userInput);
-    console.log(playerSelection);
-
-    // Declare variable win
+    
+    // Declare variable winGame
     let winGame;
-    // Declare variable lose
+    // Declare variable loseGame
     let loseGame;
-    // Declare variable draw
+    // Declare variable drawGame
     let drawGame;
 
-    // Create function playRound to compare playerSelection with computerChoice
-    function playRound() {
-        // if playerSelection equals computerChoice
-        // draw = "It's a tie."
-        // Return draw
-        if (playerSelection === computerSelection) {
-             drawGame = "It's a tie.";
-             return drawGame;
-        }
-        // else if playerSelection gets rock and computerChoice gets paper
-        // lose = "You lose! Paper beats Rock."
-        // Return lose
-        else if (playerSelection === "Rock" && computerSelection === "Paper") {
-            loseGame = "You lose! Paper beats Rock.";
-            return loseGame;
-        }
-        //  or if playerSelection gets paper and computerChoice gets scissors
-        //  lose = "You lose! Scissors beats Paper."
-        //  Return lose
-        else if (playerSelection === "Paper" && computerChoice === "Scissors") {
-            loseGame = "You lose! Scissors beats Paper.";
-            return loseGame;
-        }
-        // or if playerSelection gets scissors and computerChoice gets rock
-        // lose = "You lose! Rock beats Scissors."
-        // Return lose
-        else if (playerSelection === "Scissors" && computerChoice === "Rock") {
-            loseGame = "You lose! Rock beats Scissors.";
-            return loseGame;
-        }
-        // if playerSelection gets rock and computerChoice gets scissors
-        // win = "Winner, winner, chicken dinner! Rock beats Scissors."
-        // Return win
-        else if (playerSelection === "Rock" && computerSelection === "Scissors") {
-            winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
-            return winGame;
-        }
-        // or if playerSelection gets paper and computerChoice gets rock
-        // win = "Winner, winner, chicken dinner! Paper beats Rock."
-        // Return win
-        else if (playerSelection === "Paper" && computerChoice === "Rock") {
-            winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
-            return winGame;
-        }
-        // or if playerSelection gets scissors and computerChoice gets paper
-        // win = "Winner, winner, chicken dinner! Scissors beats Paper."
-        // Return win
-        else if (playerSelection === "Scissors" && computerChoice === "Paper") {
-            winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
-            return winGame;
-        }
-    }
-    console.log(playRound(drawGame));
-    console.log(playRound(loseGame));
-    console.log(playRound(winGame));
+   
+    // Create new function called game() to play 5 rounds using playRound function
+    // function game() {
+        // Create for loop to increment up by 1 while less than 5
+        for (let i = 0; i < 5; i++) {
+             // Declare a random number variable - randomNumber
+            // Randomly select 1 of 3 variables 
+            // Use random function to get 0-1 integer
+            // Multiply by 3 and add 1 (if function rounds down i.e.Math.floor)
+            // Use console to return the choice
+            let randomNumber = Math.floor(Math.random()*3)+1;
+            //console.log(randomNumber);
 
+            // Create getComputerChoice function
+            // Assign randomNumber to it's designated constant and return its value:
+            function getComputerChoice () {
+                // if randomNumber equals 1
+                // assign rock to computerChoice
+                if(randomNumber === 1) {
+                    return computerChoice = rock;
+                    //console.log(computerChoice);
+                }
+                // if randomNumber equals 2
+                // assign paper to computerChoice
+                else if(randomNumber === 2) {
+                    return computerChoice = paper;
+                    //console.log(computerChoice);
+                }
+                // if randomNumber equals 3
+                // assign scissors to computerChoice
+                else {
+                    return computerChoice = scissors;
+                    //console.log(computerChoice);
+                } 
+            }
+            console.log(getComputerChoice(computerChoice));
+        
+            // Declare const computerSelection = computerChoice
+            const computerSelection = computerChoice;
+            console.log(computerSelection);
+
+            // Prompt user to input "Rock Paper Scissor: " - variable userInput
+            userInput = prompt("Rock Paper Scissors: ");
+
+            // Create function caseCorrect to convert user input to be case insensitive
+            // Return the new value - first character uppercase, the rest lowercase
+            function caseCorrect(userInput) {
+                let char1 = userInput.charAt(0);
+                let char2 = char1.toUpperCase();
+                let lowerCaseText1 = userInput.slice(1);
+                let lowerCaseText2 = lowerCaseText1.toLowerCase();
+                return char2+lowerCaseText2;     
+            }
+
+            // Declare constant playerSelection = userInput
+            const playerSelection = caseCorrect(userInput);
+            console.log(playerSelection);
+            console.log(caseCorrect(userInput));
+
+            // Create function playRound to compare playerSelection with computerChoice
+            function playRound() {
+                // if playerSelection equals computerChoice
+                // drawGame = "It's a tie."
+                // Return drawGame
+                if (playerSelection === computerSelection) {
+                    drawGame = "It's a tie.";
+                    return drawGame;
+                }
+                // else if playerSelection gets rock and computerChoice gets paper
+                // loseGame = "You lose! Paper beats Rock."
+                // Return loseGame
+                else if (playerSelection === "Rock" && computerSelection === "Paper") {
+                    loseGame = "You lose! Paper beats Rock.";
+                    return loseGame;
+                }
+                //  or if playerSelection gets paper and computerChoice gets scissors
+                //  loseGame = "You lose! Scissors beats Paper."
+                //  Return loseGame
+                else if (playerSelection === "Paper" && computerChoice === "Scissors") {
+                    loseGame = "You lose! Scissors beats Paper.";
+                    return loseGame;
+                }
+                // or if playerSelection gets scissors and computerChoice gets rock
+                // loseGame = "You lose! Rock beats Scissors."
+                // Return loseGame
+                else if (playerSelection === "Scissors" && computerChoice === "Rock") {
+                    loseGame = "You lose! Rock beats Scissors.";
+                    return loseGame;
+                }
+                // if playerSelection gets rock and computerChoice gets scissors
+                // winGame = "Winner, winner, chicken dinner! Rock beats Scissors."
+                // Return winGame
+                else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+                    winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
+                    return winGame;
+                }
+                // or if playerSelection gets paper and computerChoice gets rock
+                // winGame = "Winner, winner, chicken dinner! Paper beats Rock."
+                // Return winGame
+                else if (playerSelection === "Paper" && computerChoice === "Rock") {
+                    winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
+                    return winGame;
+                }
+                // or if playerSelection gets scissors and computerChoice gets paper
+                // winGame = "Winner, winner, chicken dinner! Scissors beats Paper."
+                // Return winGame
+                else if (playerSelection === "Scissors" && computerChoice === "Paper") {
+                    winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
+                    return winGame;
+                }
+            }
+            console.log(playRound());
+            // console.log(playRound(loseGame));
+            // console.log(playRound(winGame));
+        }
+        
+    // }
     
 
 </script>

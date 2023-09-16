@@ -22,12 +22,6 @@
     // Declare variable computerChoice
     let computerChoice;
 
-
-    // Declare winCount variable
-    // Declare loseCount variable
-    let winCount;
-    let loseCount;
-
     
     // Declare userInput variable
     let userInput;
@@ -39,6 +33,11 @@
     let loseGame;
     // Declare variable drawGame
     let drawGame;
+
+    // Declare winCount variable
+    let winCount = 0;
+    // Declare loseCount variable
+    let loseCount = 0;
 
    
     // Create new function called game() to play 5 rounds using playRound function
@@ -113,51 +112,69 @@
                 // Return loseGame
                 else if (playerSelection === "Rock" && computerSelection === "Paper") {
                     loseGame = "You lose! Paper beats Rock.";
+                    loseCount++;
                     return loseGame;
+                    return loseCount;
                 }
                 //  or if playerSelection gets paper and computerChoice gets scissors
                 //  loseGame = "You lose! Scissors beats Paper."
                 //  Return loseGame
                 else if (playerSelection === "Paper" && computerChoice === "Scissors") {
                     loseGame = "You lose! Scissors beats Paper.";
+                    loseCount++;
                     return loseGame;
+                    return loseCount;
                 }
                 // or if playerSelection gets scissors and computerChoice gets rock
                 // loseGame = "You lose! Rock beats Scissors."
                 // Return loseGame
                 else if (playerSelection === "Scissors" && computerChoice === "Rock") {
                     loseGame = "You lose! Rock beats Scissors.";
+                    loseCount++;
                     return loseGame;
+                    return loseCount;
                 }
                 // if playerSelection gets rock and computerChoice gets scissors
                 // winGame = "Winner, winner, chicken dinner! Rock beats Scissors."
                 // Return winGame
                 else if (playerSelection === "Rock" && computerSelection === "Scissors") {
                     winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
+                    winCount++;
                     return winGame;
+                    return winCount;
                 }
                 // or if playerSelection gets paper and computerChoice gets rock
                 // winGame = "Winner, winner, chicken dinner! Paper beats Rock."
                 // Return winGame
                 else if (playerSelection === "Paper" && computerChoice === "Rock") {
                     winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
+                    winCount++;
                     return winGame;
+                    return winCount;
                 }
                 // or if playerSelection gets scissors and computerChoice gets paper
                 // winGame = "Winner, winner, chicken dinner! Scissors beats Paper."
                 // Return winGame
                 else if (playerSelection === "Scissors" && computerChoice === "Paper") {
                     winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
+                    winCount++;
                     return winGame;
+                    return winCount;
                 }
             }
             console.log(playRound());
             // console.log(playRound(loseGame));
             // console.log(playRound(winGame));
+
+            // do {
+            //     winCount++;
+            // }
         }
         
     // }
-    
+
+    console.log(winCount);
+    console.log(loseCount);
 
 </script>
 </html>

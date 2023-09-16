@@ -41,12 +41,13 @@
     // Declare drawCount variable
     let drawCount = 0;
 
-   
-    // Create new function called game() to play 5 rounds using playRound function
-    // function game() {
-        // Create for loop to increment up by 1 while less than 5
-        for (let i = 0; i < 5; i++) {
-             // Declare a random number variable - randomNumber
+    
+// This came out of for loop
+
+ // Create for loop to increment up by 1 while less than 5
+//  for (let i = 0; i < 5; i++) { 
+
+            // Declare a random number variable - randomNumber
             // Randomly select 1 of 3 variables 
             // Use random function to get 0-1 integer
             // Multiply by 3 and add 1 (if function rounds down i.e.Math.floor)
@@ -75,12 +76,14 @@
                     return computerChoice = scissors;
                     //console.log(computerChoice);
                 } 
+                
+                // return computerSelection;
             }
-            console.log(getComputerChoice(computerChoice));
+            console.log(getComputerChoice());
         
             // Declare const computerSelection = computerChoice
             const computerSelection = computerChoice;
-            console.log(computerSelection);
+            // console.log(computerSelection);
 
             // Prompt user to input "Rock Paper Scissor: " - variable userInput
             userInput = prompt("Rock Paper Scissors: ");
@@ -97,11 +100,19 @@
 
             // Declare constant playerSelection = userInput
             const playerSelection = caseCorrect(userInput);
+            // console.log(caseCorrect(userInput));
             console.log(playerSelection);
-            console.log(caseCorrect(userInput));
 
-            // Create function playRound to compare playerSelection with computerChoice
-            function playRound() {
+            // play round was here **
+
+// This came out of for loop
+     
+
+
+// Create new function called game() to play 5 rounds using playRound function
+    function game(playRound) {
+    // Create function playRound to compare playerSelection with computerChoice
+    function playRound() {
                 // if playerSelection equals computerChoice
                 // drawGame = "It's a tie."
                 // Each time drawGame variable is returned increment drawCount by 1
@@ -180,17 +191,18 @@
                     return winCount;
                 }
             }
-            console.log(playRound());
+            // console.log(playRound());
+            return playRound();
+
             // console.log(playRound(loseGame));
             // console.log(playRound(winGame));
-
-        }
-        
-    // }
+    }
+     console.log(game());
 
     // console.log(winCount);
     // console.log(loseCount);
-
+    
+    // }
     // Report overall winner or loser at the end
     console.log("Results out of 5 games:\nWins: " + winCount + "\nLoses: " + loseCount + "\nDraws: " + drawCount);
     

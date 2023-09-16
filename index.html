@@ -107,7 +107,9 @@
                 // Return drawGame
                 if (playerSelection === computerSelection) {
                     drawGame = "It's a tie.";
+                    drawCount++;
                     return drawGame;
+                    return drawCount;
                 }
                 // else if playerSelection gets rock and computerChoice gets paper
                 // loseGame = "You lose! Paper beats Rock."

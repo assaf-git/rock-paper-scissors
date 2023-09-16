@@ -42,77 +42,70 @@
     let drawCount = 0;
 
     
-// This came out of for loop
+    // Create for loop to increment up by 1 while less than 5
+    for (let i = 0; i < 5; i++) { 
 
- // Create for loop to increment up by 1 while less than 5
- for (let i = 0; i < 5; i++) { 
+        // Declare a random number variable - randomNumber
+        // Randomly select 1 of 3 variables 
+        // Use random function to get 0-1 integer
+        // Multiply by 3 and add 1 (if function rounds down i.e.Math.floor)
+        // Use console to return the choice
+        let randomNumber = Math.floor(Math.random()*3)+1;
+        //console.log(randomNumber);
 
-            // Declare a random number variable - randomNumber
-            // Randomly select 1 of 3 variables 
-            // Use random function to get 0-1 integer
-            // Multiply by 3 and add 1 (if function rounds down i.e.Math.floor)
-            // Use console to return the choice
-            let randomNumber = Math.floor(Math.random()*3)+1;
-            //console.log(randomNumber);
-
-            // Create getComputerChoice function
-            // Assign randomNumber to it's designated constant and return its value:
-            function getComputerChoice () {
-                // if randomNumber equals 1
-                // assign rock to computerChoice
-                if(randomNumber === 1) {
-                    return computerChoice = rock;
-                    //console.log(computerChoice);
-                }
-                // if randomNumber equals 2
-                // assign paper to computerChoice
-                else if(randomNumber === 2) {
-                    return computerChoice = paper;
-                    //console.log(computerChoice);
-                }
-                // if randomNumber equals 3
-                // assign scissors to computerChoice
-                else {
-                    return computerChoice = scissors;
-                    //console.log(computerChoice);
-                } 
-                
-                // return computerSelection;
+        // Create getComputerChoice function
+        // Assign randomNumber to it's designated constant and return its value:
+        function getComputerChoice () {
+            // if randomNumber equals 1
+            // assign rock to computerChoice
+            if(randomNumber === 1) {
+                return computerChoice = rock;
+                //console.log(computerChoice);
             }
-            console.log(getComputerChoice());
-        
-            // Declare const computerSelection = computerChoice
-            const computerSelection = computerChoice;
-            // console.log(computerSelection);
-
-            // Prompt user to input "Rock Paper Scissor: " - variable userInput
-            userInput = prompt("Rock Paper Scissors: ");
-
-            // Create function caseCorrect to convert user input to be case insensitive
-            // Return the new value - first character uppercase, the rest lowercase
-            function caseCorrect(userInput) {
-                let char1 = userInput.charAt(0);
-                let char2 = char1.toUpperCase();
-                let lowerCaseText1 = userInput.slice(1);
-                let lowerCaseText2 = lowerCaseText1.toLowerCase();
-                return char2+lowerCaseText2;     
+            // if randomNumber equals 2
+            // assign paper to computerChoice
+            else if(randomNumber === 2) {
+                return computerChoice = paper;
+                //console.log(computerChoice);
             }
+            // if randomNumber equals 3
+            // assign scissors to computerChoice
+            else {
+                return computerChoice = scissors;
+                //console.log(computerChoice);
+            } 
+            
+            // return computerSelection;
+        }
+        console.log(getComputerChoice());
+            
+        // Declare const computerSelection = computerChoice
+        const computerSelection = computerChoice;
+        // console.log(computerSelection);
 
-            // Declare constant playerSelection = userInput
-            const playerSelection = caseCorrect(userInput);
-            // console.log(caseCorrect(userInput));
-            console.log(playerSelection);
+        // Prompt user to input "Rock Paper Scissor: " - variable userInput
+        userInput = prompt("Rock Paper Scissors: ");
 
-            // play round was here **
+        // Create function caseCorrect to convert user input to be case insensitive
+        // Return the new value - first character uppercase, the rest lowercase
+        function caseCorrect(userInput) {
+            let char1 = userInput.charAt(0);
+            let char2 = char1.toUpperCase();
+            let lowerCaseText1 = userInput.slice(1);
+            let lowerCaseText2 = lowerCaseText1.toLowerCase();
+            return char2+lowerCaseText2;     
+        }
 
-// This came out of for loop
-     
+        // Declare constant playerSelection = userInput
+        const playerSelection = caseCorrect(userInput);
+        // console.log(caseCorrect(userInput));
+        console.log(playerSelection);     
 
 
-// Create new function called game() to play 5 rounds using playRound function
-    function game(playRound) {
-    // Create function playRound to compare playerSelection with computerChoice
-    function playRound() {
+        // Create new function called game() to play 5 rounds using playRound function
+        function game(playRound) {
+            // Create function playRound to compare playerSelection with computerChoice
+            function playRound() {
                 // if playerSelection equals computerChoice
                 // drawGame = "It's a tie."
                 // Each time drawGame variable is returned increment drawCount by 1
@@ -196,13 +189,14 @@
 
             // console.log(playRound(loseGame));
             // console.log(playRound(winGame));
-    }
-     console.log(game());
+        }
+        console.log(game());
 
-    // console.log(winCount);
-    // console.log(loseCount);
+        // console.log(winCount);
+        // console.log(loseCount);
 
     }
+    
     // Report overall winner or loser at the end
     console.log("Results out of 5 games:\nWins: " + winCount + "\nLoses: " + loseCount + "\nDraws: " + drawCount);
     

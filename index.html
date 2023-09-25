@@ -82,23 +82,31 @@
         const computerSelection = computerChoice;
         // console.log(computerSelection);
 
-        // Prompt user to input "Rock Paper Scissor: " - variable userInput
-        userInput = prompt("Rock Paper Scissors: ");
+        function getUserInput () {
+            // Prompt user to input "Rock Paper Scissor: " - variable userInput
+            userInput = prompt("Rock Paper Scissors: ");
 
-        // Create function caseCorrect to convert user input to be case insensitive
-        // Return the new value - first character uppercase, the rest lowercase
-        function caseCorrect(userInput) {
-            let char1 = userInput.charAt(0);
-            let char2 = char1.toUpperCase();
-            let lowerCaseText1 = userInput.slice(1);
-            let lowerCaseText2 = lowerCaseText1.toLowerCase();
-            return char2+lowerCaseText2;     
+            // Create function caseCorrect to convert user input to be case insensitive
+            // Return the new value - first character uppercase, the rest lowercase
+            function caseCorrect(userInput) {
+                let char1 = userInput.charAt(0);
+                let char2 = char1.toUpperCase();
+                let lowerCaseText1 = userInput.slice(1);
+                let lowerCaseText2 = lowerCaseText1.toLowerCase();
+                return char2+lowerCaseText2;     
+            }
+            return caseCorrect(userInput);
+            
+            // return playerSelection;
+            // console.log(caseCorrect(userInput));
         }
+        getUserInput();
 
         // Declare constant playerSelection = userInput
-        const playerSelection = caseCorrect(userInput);
-        // console.log(caseCorrect(userInput));
-        console.log(playerSelection);     
+        const playerSelection = getUserInput(userInput);
+          
+        console.log(playerSelection);  
+
 
 
         // Create new function called game() to play 5 rounds using playRound function

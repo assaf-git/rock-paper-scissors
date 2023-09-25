@@ -197,17 +197,21 @@
     }
     
     // Report overall winner or loser at the end
-    console.log("Results out of 5 games:\nWins: " + winCount + "\nLoses: " + loseCount + "\nDraws: " + drawCount);
+    function reportResult() {
+
+        console.log("Results out of 5 games:\nWins: " + winCount + "\nLoses: " + loseCount + "\nDraws: " + drawCount);
     
-    if (winCount > loseCount) {
-        console.log("Well done! You are the overall champ!");
+        if (winCount > loseCount) {
+            console.log("Well done! You are the overall champ!");
+        }
+        else if (winCount < loseCount) {
+            console.log("Bad luck. You are the overall loser!");
+        }
+        else {
+            console.log("Interesting...overall it's a draw!");
+        }
     }
-    else if (winCount < loseCount) {
-        console.log("Bad luck. You are the overall loser!");
-    }
-    else {
-        console.log("Interesting...overall it's a draw!");
-    }
+    reportResult();
 
 </script>
 </html>

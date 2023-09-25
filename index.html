@@ -42,8 +42,7 @@
     let drawCount = 0;
 
     
-    // Create for loop to increment up by 1 while less than 5
-    for (let i = 0; i < 5; i++) { 
+    
 
         // Declare a random number variable - randomNumber
         // Randomly select 1 of 3 variables 
@@ -100,19 +99,28 @@
             // return playerSelection;
             // console.log(caseCorrect(userInput));
         }
-        getUserInput();
+        // getUserInput();
 
         // Declare constant playerSelection = userInput
         const playerSelection = getUserInput(userInput);
           
-        console.log(playerSelection);  
 
 
 
         // Create new function called game() to play 5 rounds using playRound function
         function game(playRound) {
+            // Create for loop to increment up by 1 while less than 5
+            for (let i = 0; i < 5; i++) {
+                
+            }
+
+        }
+        // console.log(game());
+
             // Create function playRound to compare playerSelection with computerChoice
             function playRound() {
+                console.log(playerSelection);  
+
                 // if playerSelection equals computerChoice
                 // drawGame = "It's a tie."
                 // Each time drawGame variable is returned increment drawCount by 1
@@ -191,18 +199,16 @@
                     return winCount;
                 }
             }
-            // console.log(playRound());
-            return playRound();
+            console.log(playRound());
+            // return playRound();
 
             // console.log(playRound(loseGame));
             // console.log(playRound(winGame));
-        }
-        console.log(game());
+        
 
         // console.log(winCount);
         // console.log(loseCount);
 
-    }
     
     // Report overall winner or loser at the end
     function reportResult() {

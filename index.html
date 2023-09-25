@@ -75,11 +75,11 @@
                 //console.log(computerChoice);
             } 
         }
-        getComputerChoice();
+        // getComputerChoice();
         // console.log(getComputerChoice());
             
         // Declare const computerSelection = computerChoice
-        const computerSelection = computerChoice;
+        // const computerSelection = computerChoice;
         // console.log(computerSelection);
 
         function getUserInput () {
@@ -109,18 +109,26 @@
 
 
         // Create new function called game() to play 5 rounds using playRound function
-        function game(playRound) {
+        function game() {
             // Create for loop to increment up by 1 while less than 5
             for (let i = 0; i < 5; i++) {
-                
+                getComputerChoice();
+                const computerSelection = computerChoice;
+                console.log(computerSelection);
+                getUserInput();
+                console.log(playerSelection);
+                playRound();
+                console.log(playRound(computerSelection));
             }
 
         }
+        game();
         // console.log(game());
 
             // Create function playRound to compare playerSelection with computerChoice
-            function playRound() {
-                console.log(playerSelection);  
+            function playRound(computerSelection) {
+
+                // console.log(playerSelection);  
 
                 // if playerSelection equals computerChoice
                 // drawGame = "It's a tie."
@@ -200,7 +208,7 @@
                     return winCount;
                 }
             }
-            console.log(playRound());
+            // console.log(playRound());
             // return playRound();
 
             // console.log(playRound(loseGame));

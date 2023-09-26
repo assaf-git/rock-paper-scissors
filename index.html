@@ -103,7 +103,6 @@
         // getUserInput();
 
         // Declare constant playerSelection = userInput
-        const playerSelection = getUserInput(userInput);
           
 
 
@@ -116,9 +115,10 @@
                 const computerSelection = computerChoice;
                 console.log(computerSelection);
                 getUserInput();
+                const playerSelection = getUserInput(userInput);
                 console.log(playerSelection);
                 playRound();
-                console.log(playRound(computerSelection));
+                console.log(playRound(computerSelection, playerSelection));
             }
 
         }
@@ -126,7 +126,7 @@
         // console.log(game());
 
             // Create function playRound to compare playerSelection with computerChoice
-            function playRound(computerSelection) {
+            function playRound(computerSelection, playerSelection) {
 
                 // console.log(playerSelection);  
 

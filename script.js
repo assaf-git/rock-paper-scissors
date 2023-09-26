@@ -1,25 +1,18 @@
 const buttons = document.querySelectorAll(".btn");
 // console.log(playerSelection);
+
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
 
         playerButton = button.id;
 
         game();
-
-        // // getComputerChoice();
-        // console.log(computerSelection);
-        // console.log(playerSelection);
-        // playRound(playerSelection, computerSelection);
-        // // console.log(playRound());
-        // console.log(playerSelection, computerSelection);
-        // console.log(winGame, loseGame, drawGame);
-        // console.log(winCount, loseCount, drawCount);
-        // endReport();
-        // // console.log(endReport());
+        
+        if (gameCount === 5) {
+            reportResult();
+        }
 
     })
-    // game();
 })
 
 const rock = "Rock";
@@ -39,6 +32,8 @@ let drawGame;
 let winCount = 0;
 let loseCount = 0;
 let drawCount = 0;
+
+let gameCount = 0;
 
 
 function getComputerChoice () {
@@ -164,22 +159,15 @@ function reportResult() {
 }
 
 
-
-
-
-
 // Create new function called game() to play 5 rounds using playRound function
 function game() {
-    // for (let i = 0; i < 5; i++) {
        
-        const playerSelection = playerButton;
-        getComputerChoice();
-        const computerSelection = computerChoice;
-        console.log(computerSelection);
-        console.log(playerSelection);
-        playRound();
-        console.log(playRound(computerSelection, playerSelection));
-    // }
-    reportResult();
+    const playerSelection = playerButton;
+    getComputerChoice();
+    const computerSelection = computerChoice;
+    console.log(computerSelection);
+    console.log(playerSelection);
+    playRound();
+    console.log(playRound(computerSelection, playerSelection));
+    gameCount++;
 }
-// game();

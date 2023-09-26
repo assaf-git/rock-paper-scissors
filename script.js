@@ -1,34 +1,36 @@
-// const buttons = document.querySelectorAll(".btn");
-//     // console.log(playerSelection);
-//     buttons.forEach((button) => {
-//         button.addEventListener('click', () => {
-            
-//             const playerSelection = button.id;
-//             game();
+const buttons = document.querySelectorAll(".btn");
+// console.log(playerSelection);
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
 
-//             // getComputerChoice();
-//             console.log(computerSelection);
-//             console.log(playerSelection);
-//             playRound(playerSelection, computerSelection);
-//             // console.log(playRound());
-//             console.log(playerSelection, computerSelection);
-//             console.log(winGame, loseGame, drawGame);
-//             console.log(winCount, loseCount, drawCount);
-//             endReport();
-//             // console.log(endReport());
-        
-        
-        
-//         });
-//     });
+        playerButton = button.id;
+
+        game();
+
+        // // getComputerChoice();
+        // console.log(computerSelection);
+        // console.log(playerSelection);
+        // playRound(playerSelection, computerSelection);
+        // // console.log(playRound());
+        // console.log(playerSelection, computerSelection);
+        // console.log(winGame, loseGame, drawGame);
+        // console.log(winCount, loseCount, drawCount);
+        // endReport();
+        // // console.log(endReport());
+
+    })
+    // game();
+})
 
 const rock = "Rock";
 const paper = "Paper";
 const scissors = "Scissors";
 
+let playerButton;
+
 let computerChoice;
 
-let userInput;
+// let userInput;
     
 let winGame;
 let loseGame;
@@ -59,21 +61,21 @@ function getComputerChoice () {
 }
     
 
-function getUserInput () {
-    userInput = prompt("Rock Paper Scissors: ");
+// function getUserInput () {
+//     userInput = prompt("Rock Paper Scissors: ");
 
-    // Create function caseCorrect to convert user input to be case insensitive
-    // Return the new value - first character uppercase, the rest lowercase
-    function caseCorrect(userInput) {
-        let char1 = userInput.charAt(0);
-        let char2 = char1.toUpperCase();
-        let lowerCaseText1 = userInput.slice(1);
-        let lowerCaseText2 = lowerCaseText1.toLowerCase();
-        return char2+lowerCaseText2;     
-    }
-    return caseCorrect(userInput);
+//     // Create function caseCorrect to convert user input to be case insensitive
+//     // Return the new value - first character uppercase, the rest lowercase
+//     function caseCorrect(userInput) {
+//         let char1 = userInput.charAt(0);
+//         let char2 = char1.toUpperCase();
+//         let lowerCaseText1 = userInput.slice(1);
+//         let lowerCaseText2 = lowerCaseText1.toLowerCase();
+//         return char2+lowerCaseText2;     
+//     }
+//     return caseCorrect(userInput);
     
-}
+// }
 
 
 // Create function playRound to compare playerSelection with computerChoice
@@ -162,17 +164,22 @@ function reportResult() {
 }
 
 
-    // Create new function called game() to play 5 rounds using playRound function
-    function game() {
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = getUserInput(userInput);
+
+
+
+
+// Create new function called game() to play 5 rounds using playRound function
+function game() {
+    // for (let i = 0; i < 5; i++) {
+       
+        const playerSelection = playerButton;
         getComputerChoice();
         const computerSelection = computerChoice;
         console.log(computerSelection);
         console.log(playerSelection);
         playRound();
         console.log(playRound(computerSelection, playerSelection));
-    }
+    // }
     reportResult();
 }
-game();
+// game();

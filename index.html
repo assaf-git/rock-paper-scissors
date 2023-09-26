@@ -83,6 +83,7 @@
         game();
         // console.log(game());
 
+
             // Create function playRound to compare playerSelection with computerChoice
             function playRound(computerSelection, playerSelection) {
 
@@ -95,14 +96,14 @@
                 }
                 
                 else if (playerSelection === "Paper" && computerChoice === "Rock") {
-                    winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
+                    winGame = "Winner, winner, chicken dinner! Paper beats Rock.";
                     winCount++;
                     return winGame;
                     return winCount;
                 }
                 
                 else if (playerSelection === "Scissors" && computerChoice === "Paper") {
-                    winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
+                    winGame = "Winner, winner, chicken dinner! Scissors beats Paper.";
                     winCount++;
                     return winGame;
                     return winCount;

@@ -66,20 +66,7 @@
     }
         
 
-    // Create new function called game() to play 5 rounds using playRound function
-    function game() {
-        for (let i = 0; i < 5; i++) {
-            const playerSelection = getUserInput(userInput);
-            getComputerChoice();
-            const computerSelection = computerChoice;
-            console.log(computerSelection);
-            console.log(playerSelection);
-            playRound();
-            console.log(playRound(computerSelection, playerSelection));
-        }
-
-    }
-    game();
+   
 
 
     // Create function playRound to compare playerSelection with computerChoice
@@ -166,7 +153,23 @@
             console.log("Interesting...overall it's a draw!");
         }
     }
-    reportResult();
+
+
+     // Create new function called game() to play 5 rounds using playRound function
+     function game() {
+        for (let i = 0; i < 5; i++) {
+            const playerSelection = getUserInput(userInput);
+            getComputerChoice();
+            const computerSelection = computerChoice;
+            console.log(computerSelection);
+            console.log(playerSelection);
+            playRound();
+            console.log(playRound(computerSelection, playerSelection));
+        }
+        reportResult();
+
+    }
+    game();
 
 </script>
 </html>

@@ -10,80 +10,46 @@
 </body>
 
 <script>
-    // Declare 3 separate constants to their designated strings:
-    // rock = "Rock"
-    // paper = "Paper"
-    // scissors = "Scissors"
+    
     const rock = "Rock";
     const paper = "Paper";
     const scissors = "Scissors";
    
-
-    // Declare variable computerChoice
     let computerChoice;
 
-    
-    // Declare userInput variable
     let userInput;
    
     
-    // Declare variable winGame
     let winGame;
-    // Declare variable loseGame
     let loseGame;
-    // Declare variable drawGame
     let drawGame;
 
-    // Declare winCount variable
     let winCount = 0;
-    // Declare loseCount variable
     let loseCount = 0;
-    // Declare drawCount variable
     let drawCount = 0;
 
     
-    
-
-        
-
-        // Create getComputerChoice function
-        // Assign randomNumber to it's designated constant and return its value:
-        function getComputerChoice () {
-            // Declare a random number variable - randomNumber
+            function getComputerChoice () {
             // Randomly select 1 of 3 variables 
             // Use random function to get 0-1 integer
             // Multiply by 3 and add 1 (if function rounds down i.e.Math.floor)
-            // Use console to return the choice
             let randomNumber = Math.floor(Math.random()*3)+1;
-            //console.log(randomNumber);
-            // if randomNumber equals 1
-            // assign rock to computerChoice
+            
             if(randomNumber === 1) {
                 return computerChoice = rock;
-                //console.log(computerChoice);
             }
-            // if randomNumber equals 2
-            // assign paper to computerChoice
+            
             else if(randomNumber === 2) {
                 return computerChoice = paper;
-                //console.log(computerChoice);
             }
-            // if randomNumber equals 3
-            // assign scissors to computerChoice
+            
             else {
                 return computerChoice = scissors;
-                //console.log(computerChoice);
             } 
         }
-        // getComputerChoice();
-        // console.log(getComputerChoice());
-            
-        // Declare const computerSelection = computerChoice
-        // const computerSelection = computerChoice;
-        // console.log(computerSelection);
+        
 
         function getUserInput () {
-            // Prompt user to input "Rock Paper Scissor: " - variable userInput
             userInput = prompt("Rock Paper Scissors: ");
 
             // Create function caseCorrect to convert user input to be case insensitive
@@ -97,19 +63,11 @@
             }
             return caseCorrect(userInput);
             
-            // return playerSelection;
-            // console.log(caseCorrect(userInput));
         }
-        // getUserInput();
-
-        // Declare constant playerSelection = userInput
-          
-
-
+        
 
         // Create new function called game() to play 5 rounds using playRound function
         function game() {
-            // Create for loop to increment up by 1 while less than 5
             for (let i = 0; i < 5; i++) {
                 getComputerChoice();
                 const computerSelection = computerChoice;
@@ -128,95 +86,70 @@
             // Create function playRound to compare playerSelection with computerChoice
             function playRound(computerSelection, playerSelection) {
 
-                // console.log(playerSelection);  
-
-                // if playerSelection equals computerChoice
-                // drawGame = "It's a tie."
-                // Each time drawGame variable is returned increment drawCount by 1
-                // Return drawGame
-                // Return drawCount
-                if (playerSelection === computerSelection) {
-                    drawGame = "It's a tie.";
-                    drawCount++;
-                    return drawGame;
-                    return drawCount;
-                }
-                // else if playerSelection gets rock and computerChoice gets paper
-                // loseGame = "You lose! Paper beats Rock."
-                // Each time loseGame variable is returned increment loseCount by 1
-                // Return loseGame
-                // Return loseCount
-                else if (playerSelection === "Rock" && computerSelection === "Paper") {
-                    loseGame = "You lose! Paper beats Rock.";
-                    loseCount++;
-                    return loseGame;
-                    return loseCount;
-                }
-                // or if playerSelection gets paper and computerChoice gets scissors
-                // loseGame = "You lose! Scissors beats Paper."
-                // Each time loseGame variable is returned increment loseCount by 1
-                // Return loseGame
-                // Return loseCount
-                else if (playerSelection === "Paper" && computerChoice === "Scissors") {
-                    loseGame = "You lose! Scissors beats Paper.";
-                    loseCount++;
-                    return loseGame;
-                    return loseCount;
-                }
-                // or if playerSelection gets scissors and computerChoice gets rock
-                // loseGame = "You lose! Rock beats Scissors."
-                // Each time loseGame variable is returned increment loseCount by 1
-                // Return loseGame
-                // Return loseCount
-                else if (playerSelection === "Scissors" && computerChoice === "Rock") {
-                    loseGame = "You lose! Rock beats Scissors.";
-                    loseCount++;
-                    return loseGame;
-                    return loseCount;
-                }
-                // if playerSelection gets rock and computerChoice gets scissors
-                // winGame = "Winner, winner, chicken dinner! Rock beats Scissors."
-                // Each time winGame variable is returned increment winCount by 1
-                // Return winGame
-                // Return winGame
-                else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+                
+                if (playerSelection === "Rock" && computerSelection === "Scissors") {
                     winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
                     winCount++;
                     return winGame;
                     return winCount;
                 }
-                // or if playerSelection gets paper and computerChoice gets rock
-                // winGame = "Winner, winner, chicken dinner! Paper beats Rock."
-                // Each time winGame variable is returned increment winCount by 1
-                // Return winGame
-                // Return winGame
+                
                 else if (playerSelection === "Paper" && computerChoice === "Rock") {
                     winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
                     winCount++;
                     return winGame;
                     return winCount;
                 }
-                // or if playerSelection gets scissors and computerChoice gets paper
-                // winGame = "Winner, winner, chicken dinner! Scissors beats Paper."
-                // Each time winGame variable is returned increment winCount by 1
-                // Return winGame
-                // Return winGame
+                
                 else if (playerSelection === "Scissors" && computerChoice === "Paper") {
                     winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
                     winCount++;
                     return winGame;
                     return winCount;
                 }
+
+                else if (playerSelection === "Rock" && computerSelection === "Paper") {
+                    loseGame = "You lose! Paper beats Rock.";
+                    loseCount++;
+                    return loseGame;
+                    return loseCount;
+                }
+                
+                else if (playerSelection === "Paper" && computerChoice === "Scissors") {
+                    loseGame = "You lose! Scissors beats Paper.";
+                    loseCount++;
+                    return loseGame;
+                    return loseCount;
+                }
+               
+                else if (playerSelection === "Scissors" && computerChoice === "Rock") {
+                    loseGame = "You lose! Rock beats Scissors.";
+                    loseCount++;
+                    return loseGame;
+                    return loseCount;
+                }
+
+                else if (playerSelection === "Rock" && computerSelection === "Rock") {
+                    drawGame = "It's a tie. Rock all round.";
+                    drawCount++;
+                    return drawGame;
+                    return drawCount;
+                }
+
+                else if (playerSelection === "Paper" && computerSelection === "Paper") {
+                    drawGame = "It's a tie. Paper all round.";
+                    drawCount++;
+                    return drawGame;
+                    return drawCount;
+                }
+
+                else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
+                    drawGame = "It's a tie. Scissors all round.";
+                    drawCount++;
+                    return drawGame;
+                    return drawCount;
+                }
             }
-            // console.log(playRound());
-            // return playRound();
-
-            // console.log(playRound(loseGame));
-            // console.log(playRound(winGame));
-        
-
-        // console.log(winCount);
-        // console.log(loseCount);
 
     
     // Report overall winner or loser at the end

@@ -1,12 +1,22 @@
+const playerScore = document.querySelector("#playerScore");
+const computerScore = document.querySelector("#computerScore");
+
 const buttons = document.querySelectorAll(".btn");
 // console.log(playerSelection);
+
+const output = document.querySelector("#output");
+output.textContent = "Choose Rock||Paper||Scissors";
+
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
 
+
         playerButton = button.id;
 
         game();
+
+        output.textContent = playRound(playerSelection, computerSelection);
         
         if (gameCount === 5) {
             reportResult();

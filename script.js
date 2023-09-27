@@ -16,7 +16,7 @@ buttons.forEach((button) => {
 
         game();
 
-        output.textContent = winGame || loseGame || drawGame;
+        output.textContent = winRound || loseRound || drawRound;
         
         if (gameCount === 5) {
             reportResult();
@@ -35,9 +35,9 @@ let computerChoice;
 
 // let userInput;
     
-let winGame;
-let loseGame;
-let drawGame;
+let winRound;
+let loseRound;
+let drawRound;
 
 let winCount = 0;
 let loseCount = 0;
@@ -87,65 +87,65 @@ function getComputerChoice () {
 function playRound(computerSelection, playerSelection) {
     
     if (playerSelection === "Rock" && computerSelection === "Scissors") {
-        winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
+        winRound = "Winner, winner, chicken dinner! Rock beats Scissors.";
         winCount++;
-        return winGame;
+        return winRound;
         return winCount;
     }
     
     else if (playerSelection === "Paper" && computerChoice === "Rock") {
-        winGame = "Winner, winner, chicken dinner! Paper beats Rock.";
+        winRound = "Winner, winner, chicken dinner! Paper beats Rock.";
         winCount++;
-        return winGame;
+        return winRound;
         return winCount;
     }
     
     else if (playerSelection === "Scissors" && computerChoice === "Paper") {
-        winGame = "Winner, winner, chicken dinner! Scissors beats Paper.";
+        winRound = "Winner, winner, chicken dinner! Scissors beats Paper.";
         winCount++;
-        return winGame;
+        return winRound;
         return winCount;
     }
 
     else if (playerSelection === "Rock" && computerSelection === "Paper") {
-        loseGame = "You lose! Paper beats Rock.";
+        loseRound = "You lose! Paper beats Rock.";
         loseCount++;
-        return loseGame;
+        return loseRound;
         return loseCount;
     }
     
     else if (playerSelection === "Paper" && computerChoice === "Scissors") {
-        loseGame = "You lose! Scissors beats Paper.";
+        loseRound = "You lose! Scissors beats Paper.";
         loseCount++;
-        return loseGame;
+        return loseRound;
         return loseCount;
     }
     
     else if (playerSelection === "Scissors" && computerChoice === "Rock") {
-        loseGame = "You lose! Rock beats Scissors.";
+        loseRound = "You lose! Rock beats Scissors.";
         loseCount++;
-        return loseGame;
+        return loseRound;
         return loseCount;
     }
 
     else if (playerSelection === "Rock" && computerSelection === "Rock") {
-        drawGame = "It's a tie. Rock all round.";
+        drawRound = "It's a tie. Rock all round.";
         drawCount++;
-        return drawGame;
+        return drawRound;
         return drawCount;
     }
 
     else if (playerSelection === "Paper" && computerSelection === "Paper") {
-        drawGame = "It's a tie. Paper all round.";
+        drawRound = "It's a tie. Paper all round.";
         drawCount++;
-        return drawGame;
+        return drawRound;
         return drawCount;
     }
 
     else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
-        drawGame = "It's a tie. Scissors all round.";
+        drawRound = "It's a tie. Scissors all round.";
         drawCount++;
-        return drawGame;
+        return drawRound;
         return drawCount;
     }
 

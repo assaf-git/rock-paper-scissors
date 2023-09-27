@@ -24,7 +24,7 @@ buttons.forEach((button) => {
         if (gameCount === 5) {
             reportResult();
             outputReport.textContent = gameReport;
-
+            outputEndGame.textContent = winGame || loseGame || drawGame;
         }
 
     })

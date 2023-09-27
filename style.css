@@ -25,7 +25,6 @@ div {
 .buttons {
     width: 40%;
     justify-content: space-around;
-    /* flex-grow: 1; */
 }
 
 button {

@@ -16,7 +16,7 @@ buttons.forEach((button) => {
 
         game();
 
-        output.textContent = playRound(playerSelection, computerSelection);
+        output.textContent = winGame || loseGame || drawGame;
         
         if (gameCount === 5) {
             reportResult();
@@ -85,7 +85,6 @@ function getComputerChoice () {
 
 // Create function playRound to compare playerSelection with computerChoice
 function playRound(computerSelection, playerSelection) {
-
     
     if (playerSelection === "Rock" && computerSelection === "Scissors") {
         winGame = "Winner, winner, chicken dinner! Rock beats Scissors.";
@@ -149,6 +148,7 @@ function playRound(computerSelection, playerSelection) {
         return drawGame;
         return drawCount;
     }
+
 }
 
 

@@ -30,7 +30,7 @@ const buttons = document.querySelectorAll(".btn");
 // console.log(playerSelection);
 
 const output = document.querySelector("#output");
-output.textContent = "Choose Rock||Paper||Scissors";
+output.textContent = "Choose: Rock || Paper || Scissors";
 
 const outputReport = document.querySelector("#output-report");
 const outputEndGame = document.querySelector("#output-end-game");
@@ -46,7 +46,6 @@ buttons.forEach((button) => {
         playerScore.textContent = "Player score: " + winCount;
         computerScore.textContent = "Computer score: " + loseCount;
         output.textContent = winRound || loseRound || drawRound;
-        console.log(winRound || loseRound || drawRound);
         
         if (gameCount === 5) {
             reportResult();
@@ -57,7 +56,6 @@ buttons.forEach((button) => {
     })
 })
 
-// let userInput;
 
 function getComputerChoice () {
     // Randomly select 1 of 3 variables 
@@ -77,7 +75,9 @@ function getComputerChoice () {
         return computerChoice = scissors;
     } 
 }
-    
+ 
+
+// let userInput;
 
 // function getUserInput () {
 //     userInput = prompt("Rock Paper Scissors: ");
@@ -91,8 +91,7 @@ function getComputerChoice () {
 //         let lowerCaseText2 = lowerCaseText1.toLowerCase();
 //         return char2+lowerCaseText2;     
 //     }
-//     return caseCorrect(userInput);
-    
+//     return caseCorrect(userInput);  
 // }
 
 
@@ -108,7 +107,6 @@ function playRound(playerSelection, computerSelection) {
         playerSelection === "Scissors" && computerChoice === "Paper") {
         winRound = `Winner, winner, chicken dinner! ${playerSelection} beats ${computerSelection}.`;
         winCount++;
-        console.log(winRound);
         return winRound;
     }
 
@@ -117,7 +115,6 @@ function playRound(playerSelection, computerSelection) {
         playerSelection === "Scissors" && computerChoice === "Rock") {
         loseRound = `You lose! ${computerSelection} beats ${playerSelection}.`;
         loseCount++;
-        console.log(loseRound);
         return loseRound;
     }
 
@@ -126,7 +123,6 @@ function playRound(playerSelection, computerSelection) {
         playerSelection === "Scissors" && computerSelection === "Scissors") {
         drawRound = `It's a tie. ${playerSelection} all round.`;
         drawCount++;
-        console.log(drawRound);
         return drawRound;
     }
 }
@@ -163,6 +159,6 @@ function playGame() {
     console.log(playerSelection);
     playRound();
     console.log(playRound(playerSelection, computerSelection));
-    console.log(winRound || loseRound || drawRound);
+    // console.log(winRound || loseRound || drawRound);
     gameCount++;
 }

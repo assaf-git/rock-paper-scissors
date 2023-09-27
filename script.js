@@ -27,7 +27,6 @@ playerScore.textContent = "Player score: " + winCount;
 computerScore.textContent = "Computer score: " + loseCount;
 
 const buttons = document.querySelectorAll(".btn");
-// console.log(playerSelection);
 
 const output = document.querySelector("#output");
 output.textContent = "Choose: Rock || Paper || Scissors";
@@ -36,6 +35,7 @@ const outputReport = document.querySelector("#output-report");
 const outputEndGame = document.querySelector("#output-end-game");
 
 
+// Allows user to make selection using button
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
 
@@ -47,6 +47,7 @@ buttons.forEach((button) => {
         computerScore.textContent = "Computer score: " + loseCount;
         output.textContent = winRound || loseRound || drawRound;
         
+        // plays 5 round game
         if (gameCount === 5) {
             reportResult();
             outputReport.textContent = gameReport;
@@ -59,8 +60,6 @@ buttons.forEach((button) => {
 
 function getComputerChoice () {
     // Randomly select 1 of 3 variables 
-    // Use random function to get 0-1 integer
-    // Multiply by 3 and add 1 (if function rounds down i.e.Math.floor)
     let randomNumber = Math.floor(Math.random()*3)+1;
 
     if(randomNumber === 1) {
@@ -77,25 +76,7 @@ function getComputerChoice () {
 }
  
 
-// let userInput;
-
-// function getUserInput () {
-//     userInput = prompt("Rock Paper Scissors: ");
-
-//     // Create function caseCorrect to convert user input to be case insensitive
-//     // Return the new value - first character uppercase, the rest lowercase
-//     function caseCorrect(userInput) {
-//         let char1 = userInput.charAt(0);
-//         let char2 = char1.toUpperCase();
-//         let lowerCaseText1 = userInput.slice(1);
-//         let lowerCaseText2 = lowerCaseText1.toLowerCase();
-//         return char2+lowerCaseText2;     
-//     }
-//     return caseCorrect(userInput);  
-// }
-
-
-// Create function playRound to compare playerSelection with computerChoice
+// Compares playerSelection with computerSelection and returns round result
 function playRound(playerSelection, computerSelection) {
     
     winRound = "";
@@ -128,7 +109,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-// Report overall winner or loser at the end
+// Reports overall result at the end
 function reportResult() {
 
     gameReport = "Results out of 5 games:\nWins: " + winCount + "\nLoses: " + loseCount + "\nDraws: " + drawCount;
@@ -149,7 +130,6 @@ function reportResult() {
 }
 
 
-// Create new function called game() to play 5 rounds using playRound function
 function playGame() {
        
     playerSelection = playerButton;
@@ -159,6 +139,5 @@ function playGame() {
     console.log(playerSelection);
     playRound();
     console.log(playRound(playerSelection, computerSelection));
-    // console.log(winRound || loseRound || drawRound);
     gameCount++;
 }

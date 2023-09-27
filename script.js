@@ -23,6 +23,8 @@ let drawGame;
 
 const playerScore = document.querySelector("#player-score");
 const computerScore = document.querySelector("#computer-score");
+playerScore.textContent = "Player score: " + winCount;
+computerScore.textContent = "Computer score: " + loseCount;
 
 const buttons = document.querySelectorAll(".btn");
 // console.log(playerSelection);

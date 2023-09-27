@@ -7,6 +7,9 @@ const buttons = document.querySelectorAll(".btn");
 const output = document.querySelector("#output");
 output.textContent = "Choose Rock||Paper||Scissors";
 
+const outputReport = document.querySelector("#output-report");
+const outputEndGame = document.querySelector("#output-end-game");
+
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {

@@ -1,3 +1,26 @@
+const rock = "Rock";
+const paper = "Paper";
+const scissors = "Scissors";
+
+let playerButton;
+
+let computerChoice;
+
+let winRound;
+let loseRound;
+let drawRound;
+
+let winCount = 0;
+let loseCount = 0;
+let drawCount = 0;
+
+let gameCount = 0;
+
+let gameReport;
+let winGame;
+let loseGame;
+let drawGame;
+
 const playerScore = document.querySelector("#player-score");
 const computerScore = document.querySelector("#computer-score");
 
@@ -32,30 +55,7 @@ buttons.forEach((button) => {
     })
 })
 
-const rock = "Rock";
-const paper = "Paper";
-const scissors = "Scissors";
-
-let playerButton;
-
-let computerChoice;
-
 // let userInput;
-    
-let winRound;
-let loseRound;
-let drawRound;
-
-let winCount = 0;
-let loseCount = 0;
-let drawCount = 0;
-
-let gameCount = 0;
-
-let gameReport;
-let winGame;
-let loseGame;
-let drawGame;
 
 function getComputerChoice () {
     // Randomly select 1 of 3 variables 

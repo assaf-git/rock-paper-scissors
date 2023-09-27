@@ -1,0 +1,18 @@
+html {
+    background: url(images/paperBackground.jpg);
+    /* background-size: 100% 100%; */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-content: center; */
+    align-items: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+div {
+    /* display: flex; */
+    margin: 10px;
+}

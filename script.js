@@ -1,5 +1,5 @@
-const playerScore = document.querySelector("#playerScore");
-const computerScore = document.querySelector("#computerScore");
+const playerScore = document.querySelector("#player-score");
+const computerScore = document.querySelector("#computer-score");
 
 const buttons = document.querySelectorAll(".btn");
 // console.log(playerSelection);
@@ -20,6 +20,8 @@ buttons.forEach((button) => {
         
         if (gameCount === 5) {
             reportResult();
+            output.textContent = gameReport;
+
         }
 
     })
@@ -151,19 +153,27 @@ function playRound(computerSelection, playerSelection) {
 
 }
 
+let gameReport;
+let winGame;
+let loseGame;
+let drawGame;
 
 // Report overall winner or loser at the end
 function reportResult() {
 
+    gameReport = "Results out of 5 games:\nWins: " + winCount + "\nLoses: " + loseCount + "\nDraws: " + drawCount;
     console.log("Results out of 5 games:\nWins: " + winCount + "\nLoses: " + loseCount + "\nDraws: " + drawCount);
 
     if (winCount > loseCount) {
+        winGame = "Well done! You are the overall champ!";
         console.log("Well done! You are the overall champ!");
     }
     else if (winCount < loseCount) {
+        loseGame = "Bad luck. You are the overall loser!";
         console.log("Bad luck. You are the overall loser!");
     }
     else {
+        drawGame = "Interesting...overall it's a draw!";
         console.log("Interesting...overall it's a draw!");
     }
 }

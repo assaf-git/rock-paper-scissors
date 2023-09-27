@@ -16,7 +16,7 @@ buttons.forEach((button) => {
 
         playerButton = button.id;
 
-        game();
+        playGame();
 
         playerScore.textContent = "Player score: " + winCount;
         computerScore.textContent = "Computer score: " + loseCount;
@@ -152,7 +152,7 @@ function reportResult() {
 
 
 // Create new function called game() to play 5 rounds using playRound function
-function game() {
+function playGame() {
        
     playerSelection = playerButton;
     getComputerChoice();

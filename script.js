@@ -23,7 +23,7 @@ buttons.forEach((button) => {
         
         if (gameCount === 5) {
             reportResult();
-            output.textContent = gameReport;
+            outputReport.textContent = gameReport;
 
         }
 

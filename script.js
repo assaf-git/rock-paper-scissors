@@ -22,6 +22,8 @@ buttons.forEach((button) => {
         playerScore.textContent = "Player score: " + winCount;
         computerScore.textContent = "Computer score: " + loseCount;
         output.textContent = winRound || loseRound || drawRound;
+        // output.textContent = playRound(computerSelection, playerSelection);
+
         
         if (gameCount === 5) {
             reportResult();
@@ -58,7 +60,7 @@ function getComputerChoice () {
     // Use random function to get 0-1 integer
     // Multiply by 3 and add 1 (if function rounds down i.e.Math.floor)
     let randomNumber = Math.floor(Math.random()*3)+1;
-    
+
     if(randomNumber === 1) {
         return computerChoice = rock;
     }
@@ -93,67 +95,28 @@ function getComputerChoice () {
 // Create function playRound to compare playerSelection with computerChoice
 function playRound(computerSelection, playerSelection) {
     
-    if (playerSelection === "Rock" && computerSelection === "Scissors") {
-        winRound = "Winner, winner, chicken dinner! Rock beats Scissors.";
+    if (playerSelection === "Rock" && computerSelection === "Scissors" ||
+        playerSelection === "Paper" && computerChoice === "Rock" ||
+        playerSelection === "Scissors" && computerChoice === "Paper") {
+        winRound = `Winner, winner, chicken dinner! ${playerSelection} beats ${computerSelection}.`;
         winCount++;
         return winRound;
-        return winCount;
-    }
-    
-    else if (playerSelection === "Paper" && computerChoice === "Rock") {
-        winRound = "Winner, winner, chicken dinner! Paper beats Rock.";
-        winCount++;
-        return winRound;
-        return winCount;
-    }
-    
-    else if (playerSelection === "Scissors" && computerChoice === "Paper") {
-        winRound = "Winner, winner, chicken dinner! Scissors beats Paper.";
-        winCount++;
-        return winRound;
-        return winCount;
     }
 
-    else if (playerSelection === "Rock" && computerSelection === "Paper") {
-        loseRound = "You lose! Paper beats Rock.";
-        loseCount++;
-        return loseRound;
-        return loseCount;
-    }
-    
-    else if (playerSelection === "Paper" && computerChoice === "Scissors") {
-        loseRound = "You lose! Scissors beats Paper.";
-        loseCount++;
-        return loseRound;
-        return loseCount;
-    }
-    
-    else if (playerSelection === "Scissors" && computerChoice === "Rock") {
-        loseRound = "You lose! Rock beats Scissors.";
-        loseCount++;
-        return loseRound;
-        return loseCount;
+    else if (playerSelection === "Rock" && computerSelection === "Paper" ||
+            playerSelection === "Paper" && computerChoice === "Scissors" ||
+            playerSelection === "Scissors" && computerChoice === "Rock") {
+            loseRound = `You lose! ${computerSelection} beats ${playerSelection}.`;
+            loseCount++;
+            return loseRound;
     }
 
-    else if (playerSelection === "Rock" && computerSelection === "Rock") {
-        drawRound = "It's a tie. Rock all round.";
+    else if (playerSelection === "Rock" && computerSelection === "Rock" ||
+        playerSelection === "Paper" && computerSelection === "Paper" ||
+        playerSelection === "Scissors" && computerSelection === "Scissors") {
+        drawRound = `It's a tie. ${playerSelection} all round.`;
         drawCount++;
         return drawRound;
-        return drawCount;
-    }
-
-    else if (playerSelection === "Paper" && computerSelection === "Paper") {
-        drawRound = "It's a tie. Paper all round.";
-        drawCount++;
-        return drawRound;
-        return drawCount;
-    }
-
-    else if (playerSelection === "Scissors" && computerSelection === "Scissors") {
-        drawRound = "It's a tie. Scissors all round.";
-        drawCount++;
-        return drawRound;
-        return drawCount;
     }
 
 }

@@ -14,7 +14,6 @@ const outputEndGame = document.querySelector("#output-end-game");
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
 
-
         playerButton = button.id;
 
         game();
@@ -22,15 +21,14 @@ buttons.forEach((button) => {
         playerScore.textContent = "Player score: " + winCount;
         computerScore.textContent = "Computer score: " + loseCount;
         output.textContent = winRound || loseRound || drawRound;
-        // output.textContent = playRound(computerSelection, playerSelection);
-
+        console.log(winRound || loseRound || drawRound);
         
         if (gameCount === 5) {
             reportResult();
             outputReport.textContent = gameReport;
             outputEndGame.textContent = winGame || loseGame || drawGame;
         }
-
+    
     })
 })
 
@@ -54,6 +52,10 @@ let drawCount = 0;
 
 let gameCount = 0;
 
+let gameReport;
+let winGame;
+let loseGame;
+let drawGame;
 
 function getComputerChoice () {
     // Randomly select 1 of 3 variables 
@@ -93,22 +95,28 @@ function getComputerChoice () {
 
 
 // Create function playRound to compare playerSelection with computerChoice
-function playRound(computerSelection, playerSelection) {
+function playRound(playerSelection, computerSelection) {
     
+    winRound = "";
+    loseRound = "";
+    drawRound = "";
+
     if (playerSelection === "Rock" && computerSelection === "Scissors" ||
         playerSelection === "Paper" && computerChoice === "Rock" ||
         playerSelection === "Scissors" && computerChoice === "Paper") {
         winRound = `Winner, winner, chicken dinner! ${playerSelection} beats ${computerSelection}.`;
         winCount++;
+        console.log(winRound);
         return winRound;
     }
 
     else if (playerSelection === "Rock" && computerSelection === "Paper" ||
-            playerSelection === "Paper" && computerChoice === "Scissors" ||
-            playerSelection === "Scissors" && computerChoice === "Rock") {
-            loseRound = `You lose! ${computerSelection} beats ${playerSelection}.`;
-            loseCount++;
-            return loseRound;
+        playerSelection === "Paper" && computerChoice === "Scissors" ||
+        playerSelection === "Scissors" && computerChoice === "Rock") {
+        loseRound = `You lose! ${computerSelection} beats ${playerSelection}.`;
+        loseCount++;
+        console.log(loseRound);
+        return loseRound;
     }
 
     else if (playerSelection === "Rock" && computerSelection === "Rock" ||
@@ -116,15 +124,11 @@ function playRound(computerSelection, playerSelection) {
         playerSelection === "Scissors" && computerSelection === "Scissors") {
         drawRound = `It's a tie. ${playerSelection} all round.`;
         drawCount++;
+        console.log(drawRound);
         return drawRound;
     }
-
 }
 
-let gameReport;
-let winGame;
-let loseGame;
-let drawGame;
 
 // Report overall winner or loser at the end
 function reportResult() {
@@ -150,12 +154,13 @@ function reportResult() {
 // Create new function called game() to play 5 rounds using playRound function
 function game() {
        
-    const playerSelection = playerButton;
+    playerSelection = playerButton;
     getComputerChoice();
-    const computerSelection = computerChoice;
+    computerSelection = computerChoice;
     console.log(computerSelection);
     console.log(playerSelection);
     playRound();
-    console.log(playRound(computerSelection, playerSelection));
+    console.log(playRound(playerSelection, computerSelection));
+    console.log(winRound || loseRound || drawRound);
     gameCount++;
 }

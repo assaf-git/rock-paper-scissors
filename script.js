@@ -20,6 +20,7 @@ buttons.forEach((button) => {
         game();
 
         playerScore.textContent = "Player score: " + winCount;
+        computerScore.textContent = "Computer score: " + loseCount;
         output.textContent = winRound || loseRound || drawRound;
         
         if (gameCount === 5) {

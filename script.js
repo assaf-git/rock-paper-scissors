@@ -21,6 +21,8 @@ let winGame;
 let loseGame;
 let drawGame;
 
+let timeLeft = 5;
+
 const playerScore = document.querySelector("#player-score");
 const computerScore = document.querySelector("#computer-score");
 playerScore.textContent = "Player score: " + winCount;
@@ -47,13 +49,48 @@ buttons.forEach((button) => {
         computerScore.textContent = "Computer score: " + loseCount;
         output.textContent = winRound || loseRound || drawRound;
         
-        // plays 5 round game
+        // Plays 5 round game
         if (gameCount === 5) {
             reportResult();
             outputReport.textContent = gameReport;
             outputEndGame.textContent = winGame || loseGame || drawGame;
+            console.log(gameCount);
+            setTimeout(() => {
+                resetGame();
+            }, 5000);
+
+            let downloadTimer = setInterval(function(){
+            if(timeLeft <= 0){
+                clearInterval(downloadTimer);
+                document.getElementById("countdown").innerHTML = "";
+            } else {
+                 document.getElementById("countdown").innerHTML = "Reset in " + timeLeft;
+            }
+            timeLeft -= 1;
+            }, 1000);
+            
+        // }
+        //     document.getElementById("progressBar").value = 5 - timeLeft;
+        //     timeLeft -= 1;
+        //     }, 1000);
+            // setTimeout(resetGame(), 10000);
         }
-    
+        // else if (resetGame === 1) {
+        //     winCount = 0;
+        //     loseCount = 0;
+        //     drawCount = 0;
+        //     playerScore.textContent = "Player score: " + winCount;
+        //     computerScore.textContent = "Computer score: " + loseCount;
+        //     gameReport = " ";
+        //     winGame = " ";
+        //     loseGame = " ";
+        //     drawGame = " ";
+        //     outputReport.textContent = gameReport;
+        //     outputEndGame.textContent = winGame || loseGame || drawGame;
+        //     resetGame = 0;
+        //     gameCount = 0;
+        //     playGame();
+        // }
     })
 })
 
@@ -140,4 +177,22 @@ function playGame() {
     playRound();
     console.log(playRound(playerSelection, computerSelection));
     gameCount++;
+}
+
+function resetGame() {
+    winCount = 0;
+    loseCount = 0;
+    drawCount = 0;
+    playerScore.textContent = "Player score: " + winCount;
+    computerScore.textContent = "Computer score: " + loseCount;
+    gameReport = "";
+    winGame = "";
+    loseGame = "";
+    drawGame = "";
+    playerSelection = undefined;
+    computerSelection = undefined;
+    outputReport.textContent = gameReport;
+    outputEndGame.textContent = winGame || loseGame || drawGame;
+    gameCount = 0;
+    // playGame();
 }

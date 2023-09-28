@@ -32,3 +32,8 @@ button {
     min-width: 70px;
     margin: 5px;
 }
+
+#output-report {
+    white-space: pre;
+    text-align: center;
+}

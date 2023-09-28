@@ -56,7 +56,6 @@ buttons.forEach((button) => {
             reportResult();
             outputReport.textContent = gameReport;
             outputEndGame.textContent = winGame || loseGame || drawGame;
-            console.log(gameCount);
             
             // Sets 5 (6) second resetGame countdown timer
             setTimeout(() => {
@@ -131,7 +130,7 @@ function playRound(playerSelection, computerSelection) {
 // Reports overall result at the end
 function reportResult() {
 
-    gameReport = "Results out of 5 games:\nWins: " + winCount + "\nLoses: " + loseCount + "\nDraws: " + drawCount;
+    gameReport = "Results out of 5 games: \r\nWins:  " + winCount + " \r\nLoses:  " + loseCount + "  \r\nDraws:  " + drawCount;
     console.log("Results out of 5 games:\nWins: " + winCount + "\nLoses: " + loseCount + "\nDraws: " + drawCount);
 
     if (winCount > loseCount) {
@@ -160,6 +159,7 @@ function playGame() {
     console.log(playRound(playerSelection, computerSelection));
     gameCount++;
 }
+
 
 function resetGame() {
     winCount = 0;

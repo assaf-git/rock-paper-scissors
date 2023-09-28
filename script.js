@@ -41,6 +41,8 @@ const outputEndGame = document.querySelector("#output-end-game");
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
 
+        timeLeft = 5;
+
         playerButton = button.id;
 
         playGame();
@@ -55,10 +57,11 @@ buttons.forEach((button) => {
             outputReport.textContent = gameReport;
             outputEndGame.textContent = winGame || loseGame || drawGame;
             console.log(gameCount);
+            
+            // Sets 5 (6) second resetGame countdown timer
             setTimeout(() => {
                 resetGame();
-            }, 5000);
-
+            }, 6000);
             let downloadTimer = setInterval(function(){
             if(timeLeft <= 0){
                 clearInterval(downloadTimer);
@@ -69,28 +72,7 @@ buttons.forEach((button) => {
             timeLeft -= 1;
             }, 1000);
             
-        // }
-        //     document.getElementById("progressBar").value = 5 - timeLeft;
-        //     timeLeft -= 1;
-        //     }, 1000);
-            // setTimeout(resetGame(), 10000);
         }
-        // else if (resetGame === 1) {
-        //     winCount = 0;
-        //     loseCount = 0;
-        //     drawCount = 0;
-        //     playerScore.textContent = "Player score: " + winCount;
-        //     computerScore.textContent = "Computer score: " + loseCount;
-        //     gameReport = " ";
-        //     winGame = " ";
-        //     loseGame = " ";
-        //     drawGame = " ";
-        //     outputReport.textContent = gameReport;
-        //     outputEndGame.textContent = winGame || loseGame || drawGame;
-        //     resetGame = 0;
-        //     gameCount = 0;
-        //     playGame();
-        // }
     })
 })
 
@@ -194,5 +176,4 @@ function resetGame() {
     outputReport.textContent = gameReport;
     outputEndGame.textContent = winGame || loseGame || drawGame;
     gameCount = 0;
-    // playGame();
 }

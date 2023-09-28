@@ -76,7 +76,7 @@ buttons.forEach((button) => {
 })
 
 
-function getComputerChoice () {
+function getComputerChoice() {
     // Randomly select 1 of 3 variables 
     let randomNumber = Math.floor(Math.random()*3)+1;
 

@@ -36,4 +36,14 @@ button {
 #output-report {
     white-space: pre;
     text-align: center;
+    min-width: 155px;
+    min-height: 80px;
+}
+
+#output-end-game {
+    min-height: 20px;
+}
+
+#countdown {
+    min-height: 20px;
 }

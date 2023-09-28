@@ -24,10 +24,11 @@ div {
 
 .buttons {
     width: 40%;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 button {
     width: 20%;
+    min-width: 70px;
     margin: 5px;
 }

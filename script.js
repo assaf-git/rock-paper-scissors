@@ -41,9 +41,9 @@ const outputEndGame = document.querySelector("#output-end-game");
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
 
-        timeLeft = 5;
-
         playerButton = button.id;
+
+        timeLeft = 5;
 
         playGame();
 
@@ -167,6 +167,7 @@ function resetGame() {
     drawCount = 0;
     playerScore.textContent = "Player score: " + winCount;
     computerScore.textContent = "Computer score: " + loseCount;
+    output.textContent = "Choose: Rock || Paper || Scissors";
     gameReport = "";
     winGame = "";
     loseGame = "";
